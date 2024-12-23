@@ -1,0 +1,57 @@
+Service:
+  RegionId: cn-hangzhou
+  DeployType: ros
+  OperationMetadata:
+    StatusOperationConfigs:
+      - TemplateName: 'ECS单机版'
+        SupportOperations:
+          - Start
+          - Stop
+          - Restart
+    SupportBackup: true
+    ModifyParametersConfig:
+      - TemplateName: ECS单机版
+        Operation:
+          - Name: 变更ECS实例规格
+            Description: 变更ECS实例规格
+            Type: Custom
+            Parameters:
+              - EcsInstanceType
+          - Name: 变更ECS实例密码
+            Description: 变更ECS实例密码
+            Type: Custom
+            Parameters:
+              - InstancePassword
+  DeployMetadata:
+    SupplierDeployMetadata:
+      ArtifactRelation:
+        ecs_image_quickstart-metabase:
+          ArtifactId: ${Artifact.EcsImage.ArtifactId}
+          ArtifactVersion: draft
+    TemplateConfigs:
+      - Name: ECS单机版
+        Url: 'ros_templates/template.yaml'
+        AllowedRegions:
+          - ap-southeast-1
+  ServiceType: private
+  ServiceInfo:
+    Locale: zh-CN
+    ShortDescription: demo
+    Image: 'resources/icons/service_logo.png'
+Artifact:
+  EcsImage:
+    ArtifactType: EcsImage
+    ArtifactName: ecs_image_quickstart-metabase
+    Description: quickstart-metabase EcsImage
+    SupportRegionIds:
+        - ap-southeast-1
+    ArtifactBuildProperty:
+      CodeRepo:
+        Platform: github
+        Owner: linziqiaolzq
+        RepoName: aliyun-computenest/quickstart-metabase
+        Branch: master
+      RegionId: ap-southeast-1
+      CommandType: RunShellScript
+      CommandContent: |-
+        docker build --build-arg VERSION=latest -f Dockerfile -t aliyun-computenest/quickstart-metabase .;

@@ -1,0 +1,14 @@
+AdvancedOptions: true
+DockerFilePath: Dockerfile
+ServiceType: private
+ArtifactSourceType: Dockerfile
+ServiceBuildRegion: ap-southeast-1
+RepoName: aliyun-computenest/quickstart-metabase
+RegionId: cn-hangzhou
+CustomParameters: ''
+DockerBuildArgs:
+- ArgumentValue: latest
+  ArgumentName: VERSION
+Owner: linziqiaolzq
+Branch: master
+Platform: github
