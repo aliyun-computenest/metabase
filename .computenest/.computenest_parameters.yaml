@@ -3,8 +3,8 @@ DockerFilePath: Dockerfile
 ServiceType: private
 ArtifactSourceType: Dockerfile
 ServiceBuildRegion: ap-southeast-1
-RepoName: aliyun-computenest/quickstart-metabase
-RegionId: ap-southeast-1
+RepoName: aliyun-computenest/metabase
+RegionId: cn-hangzhou
 CustomParameters: ''
 DockerBuildArgs:
 - ArgumentValue: latest

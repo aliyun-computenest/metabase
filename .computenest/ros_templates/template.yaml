@@ -257,7 +257,7 @@ Resources:
         Ref: ZoneId
       SecurityGroupId:
         Ref: SecurityGroup
-      ImageId: ecs_image_quickstart-metabase
+      ImageId: ecs_image_metabase
       Password:
         Ref: InstancePassword
       InstanceType:
@@ -279,7 +279,7 @@ Resources:
       Timeout: 3600
       CommandContent: |-
         #!/bin/bash
-        docker run -d -p 3000:3000 aliyun-computenest/quickstart-metabase
+        docker run -d -p 3000:3000 aliyun-computenest/metabase
 Outputs:
   ServerAddress1:
     Description:

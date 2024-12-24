@@ -1,5 +1,5 @@
 Service:
-  RegionId: ap-southeast-1
+  RegionId: cn-hangzhou
   DeployType: ros
   OperationMetadata:
     StatusOperationConfigs:
@@ -25,7 +25,7 @@ Service:
   DeployMetadata:
     SupplierDeployMetadata:
       ArtifactRelation:
-        ecs_image_quickstart-metabase:
+        ecs_image_metabase:
           ArtifactId: ${Artifact.EcsImage.ArtifactId}
           ArtifactVersion: draft
     TemplateConfigs:
@@ -41,17 +41,17 @@ Service:
 Artifact:
   EcsImage:
     ArtifactType: EcsImage
-    ArtifactName: ecs_image_quickstart-metabase
-    Description: quickstart-metabase EcsImage
+    ArtifactName: ecs_image_metabase
+    Description: metabase EcsImage
     SupportRegionIds:
         - ap-southeast-1
     ArtifactBuildProperty:
       CodeRepo:
         Platform: github
         Owner: linziqiaolzq
-        RepoName: aliyun-computenest/quickstart-metabase
+        RepoName: aliyun-computenest/metabase
         Branch: master
       RegionId: ap-southeast-1
       CommandType: RunShellScript
       CommandContent: |-
-        docker build --build-arg VERSION=latest -f Dockerfile -t aliyun-computenest/quickstart-metabase .;
+        docker build --build-arg VERSION=latest -f Dockerfile -t aliyun-computenest/metabase .;
