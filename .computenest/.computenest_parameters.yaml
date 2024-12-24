@@ -4,7 +4,7 @@ ServiceType: private
 ArtifactSourceType: Dockerfile
 ServiceBuildRegion: ap-southeast-1
 RepoName: aliyun-computenest/metabase
-RegionId: ap-southeast-1
+RegionId: cn-hangzhou
 CustomParameters: ''
 DockerBuildArgs:
 - ArgumentValue: latest

@@ -1,5 +1,5 @@
 Service:
-  RegionId: ap-southeast-1
+  RegionId: cn-hangzhou
   DeployType: ros
   OperationMetadata:
     StatusOperationConfigs:
